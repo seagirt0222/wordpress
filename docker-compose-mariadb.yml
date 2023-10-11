@@ -25,6 +25,7 @@ services:
       - 80:80
     restart: always
     volumes:
+      - ./data/html:/var/www/html
       - /user/wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     environment:
       - WORDPRESS_DB_HOST=db
@@ -32,4 +33,5 @@ services:
       - WORDPRESS_DB_PASSWORD=wordpress
       - WORDPRESS_DB_NAME=wordpress
 volumes:
-  db_data:
+  db_data: {}
+  html: {}
